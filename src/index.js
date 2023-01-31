@@ -1,3 +1,3 @@
-import sth from "./modules/getLocation";
+import weatherFunction from "./modules/getLocation";
 
-sth();
+weatherFunction();

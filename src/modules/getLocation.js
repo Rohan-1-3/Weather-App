@@ -11,8 +11,12 @@ const feelsLike = document.querySelector("#feels-like");
 const windSpeed = document.querySelector("#wind");
 const minMax = document.querySelector("#min-max");
 location.value = "nepal";
-const sth = ()=>{
+const weatherFunction = ()=>{
     const weatherInfo = async ()=>{
+        if(location.value === ""){
+            alert("enter the name of city");
+            return false;
+        }
         const weatherData = await getWeatherInfo(location.value);
         console.log(weatherData);
 
@@ -29,9 +33,15 @@ const sth = ()=>{
     
     submitButton.addEventListener("click", ()=>{
         weatherInfo();
+    });
+
+    location.addEventListener("keydown", (e)=>{
+        if(e.keyCode === 13){
+            weatherInfo();
+        }
     })
 
     weatherInfo();
 }
 
-export default sth;
+export default weatherFunction;
