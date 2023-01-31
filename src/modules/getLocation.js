@@ -1,8 +1,9 @@
 /* eslint-disable no-alert */
-import getWeatherInfo from "./fetchData";
+import getWeatherInfo, { getBackGroundGif, getCountryFlag } from "./fetchData";
 
 const location = document.querySelector("#location-name");
 const submitButton = document.querySelector("#submit");
+const mainContainer = document.querySelector(".main");
 
 const description = document.querySelector("#description");
 const placeName = document.querySelector("#location-address");
@@ -26,9 +27,20 @@ const weatherFunction = ()=>{
         for(let i =0; i<descriptionCapital.length;i+=1){
             finalArray[i] = descriptionCapital[i][0].toUpperCase() + descriptionCapital[i].substr(1).toLowerCase();
         }
+        // flag of the country
+        const newImage = new Image();
+        const newImageLink = await getCountryFlag((weatherData.sys.country).toLowerCase());
+        console.log(newImageLink)
+        newImage.classList.add("flag");
+        newImage.src = newImageLink;
+
+        // getting a random gif for background according to description 
+        const bgImage = await getBackGroundGif(finalArray.join(" "));
+        mainContainer.style.backgroundImage = `url(${bgImage})`;
         // inserting value in the HTML file
         description.textContent = finalArray.join(" ");
         placeName.textContent = `${weatherData.name}, ${weatherData.sys.country}`;
+        placeName.appendChild(newImage);
         humidity.textContent = `Humidity: ${weatherData.main.humidity}`;
         temp.textContent = `${Math.round(weatherData.main.temp)}°C`;
         feelsLike.textContent = `Feels Like: ${weatherData.main.feels_like}°C`;
