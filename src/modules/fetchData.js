@@ -4,12 +4,9 @@ export default async function getWeatherInfo(location){
     {mod : "cors"}
     )
     const locationData = await response.json();
+    if(locationData.cod !== 200){
+        
+        return false;
+    }
     return locationData;
 }
-
-const getCountryFlag = async (country)=>{
-    const countryFlag = await fetch(`https://countryflagsapi.com/png/${country}`);
-    return countryFlag;
-}
-
-export {getCountryFlag}

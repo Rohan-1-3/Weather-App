@@ -1,4 +1,4 @@
-import getWeatherInfo, { getCountryFlag } from "./fetchData";
+import getWeatherInfo from "./fetchData";
 
 const location = document.querySelector("#location-name");
 const submitButton = document.querySelector("#submit");
@@ -14,12 +14,10 @@ location.value = "nepal";
 const sth = ()=>{
     const weatherInfo = async ()=>{
         const weatherData = await getWeatherInfo(location.value);
-        const flag = await getCountryFlag(weatherData.sys.country);
         console.log(weatherData);
-        console.log(flag.url)
 
         description.textContent = weatherData.weather[0].description;
-        placeName.textContent = weatherData.name;
+        placeName.textContent = `${weatherData.name}, ${weatherData.sys.country}`;
         humidity.textContent = `Humidity: ${weatherData.main.humidity}`;
         temp.textContent = `${Math.round(weatherData.main.temp)}°C`;
 
