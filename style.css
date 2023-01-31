@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    display: grid;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr;
+}
+
+header{
+    max-height: 200px;
+    display: flex;
+    font-size: 3vw;
+    background-image: linear-gradient(to right, rgb(114, 198, 254), rgb(243, 170, 35), black);
+}
+
+header img{
+    height: 10vw;
+    margin-left: 25%;
+}
+
+header p{
+    font-size: 100px;
+}
+
+.inner-container{
+    margin: 5vw;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    background-color: aqua;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    border-radius: 10px;
+    padding: 3vw;
+}
+
+.search-bar{
+    margin-left: 30%;
+}
+
+.search-bar span{
+    position: relative;
+    top: 10px;
+}
+
+.search-bar img{
+    height: 30px;
+}
+
+.search-bar img:hover{
+    background-color: rgba(0, 0, 0, 0.237);
+    border-radius: 5px;
+}
+
+p{
+    font-size: 20px;
+    font-style: bold;
+}
+
+.search-bar input{
+    height: 30px;
+    padding: 5px;
+    border-width: 0px;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+}
+
+.search-bar input:focus{
+    outline: none;
+}
+
+#temp{
+    font-size: 70px;
+}
+
+::placeholder{
+    color: white;
+}
+
+.display-1{
+    margin-top: 2vw;
+    text-align: center;
+}
+
+.footer{
+    background-color: rgb(36, 41, 47) ;
+    text-align: center;
+    color: white;
+    box-shadow: 5px -2px 8px black, -10px -4px 8px grey, -15px -2px 8px black;
+}
+
+.footer img{
+    height: 4vw;
+}
