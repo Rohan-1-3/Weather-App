@@ -28,7 +28,7 @@ header p{
     margin: 5vw;
     margin-left: 30vw;
     margin-right: 30vw;
-    background-color: aqua;
+    background-color: rgb(51, 146, 255);
     display: grid;
     grid-template-rows: 1fr 5fr;
     border-radius: 10px;
