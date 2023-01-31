@@ -5,12 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="container">
-        <input type="text" id="location-name" placeholder="Enter...">
-        <p id="description"></p>
-        <h1 id="location-header"></h1>
+        <header class="header">
+            <img src="https://cdn-icons-png.flaticon.com/512/1555/1555512.png" alt="logo">
+            <span><p>Weather App</p></span>
+        </header>
+        <main>
+            <div class="inner-container">
+                <div class="search-bar">
+                    <input type="text" id="location-name" placeholder="Enter...">
+                    <span id="submit">
+                        <img src="./magnify.png" alt="search">
+                    </span>
+                </div>
+    
+                <div class="display-1">
+                    <p id="description"></p>
+                    <h1 id="location-address"></h1>
+                    <p id="temp"></p>
+                    <p id="humidity"></p>
+                    <p id="feels-like"></p>
+                    <p id="wind"></p>
+                    <p id="min-max"></p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <a href="">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github">
+            </a>
+            <span><h2>Created By: rohan-1-3</h2></span>
+        </footer>
     </div>
 
     
